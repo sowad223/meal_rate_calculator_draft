@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Rate Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Meal Rate Calculation Results</h1>
+        <p>Meal Rate: {{ meal_rate }}</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Meal Count</th>
+                <th>Given Money</th>
+                <th>Amount Spent</th>
+                <th>Money Difference</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.meal_count }}</td>
+                    <td>{{ result.given_money }}</td>
+                    <td>{{ result.amount_spent }}</td>
+                    <td>{{ result.money_diff }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
